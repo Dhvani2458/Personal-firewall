@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python Personal Firewall</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1> Python Personal Firewall</h1>
+
+    <div class="section">
+
+        <label>Firewall Mode:</label>
+
+        <select id="mode">
+            <option value="allow">Allow</option>
+            <option value="block">Block</option>
+        </select>
+
+        <button onclick="applyMode()">
+            Apply
+        </button>
+
+    </div>
+
+
+    <div class="section">
+
+        <input type="text"
+               id="ip"
+               placeholder="Enter IP Address">
+
+        <button onclick="addIP()">
+            Add
+        </button>
+
+        <button onclick="removeIP()">
+            Remove
+        </button>
+
+    </div>
+
+
+    <div class="section">
+
+        <h3>IP List</h3>
+
+        <ul id="ip-list"></ul>
+
+    </div>
+
+
+    <div class="section">
+
+        <button onclick="startFirewall()">
+            Start Firewall
+        </button>
+
+        <button onclick="stopFirewall()">
+            Stop Firewall
+        </button>
+
+    </div>
+
+
+    <div class="section">
+
+        <button onclick="viewLogs()">
+            View Logs
+        </button>
+
+        <pre id="logs"></pre>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

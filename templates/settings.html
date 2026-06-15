@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-header">
+
+    <h1>Firewall Settings</h1>
+
+    <p>
+        System configuration and status
+    </p>
+
+</div>
+
+
+<div class="cards">
+
+    <div class="card">
+
+        <h3>Firewall Engine</h3>
+
+        <p>
+            WinDivert Packet Filter
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Backend</h3>
+
+        <p>
+            Python + Flask
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Rules Storage</h3>
+
+        <p>
+            JSON Configuration
+        </p>
+
+    </div>
+
+</div>
+
+
+<div class="card large-card">
+
+    <h2>Current Configuration</h2>
+
+    <table>
+
+        <tr>
+            <td>Packet Filter</td>
+            <td>Enabled</td>
+        </tr>
+
+        <tr>
+            <td>Rule Storage</td>
+            <td>rules.json</td>
+        </tr>
+
+        <tr>
+            <td>Log Storage</td>
+            <td>logs.txt</td>
+        </tr>
+
+        <tr>
+            <td>Firewall Type</td>
+            <td>Personal Firewall</td>
+        </tr>
+
+        <tr>
+            <td>Platform</td>
+            <td>Windows</td>
+        </tr>
+
+    </table>
+
+</div>
+
+
+<div class="card large-card">
+
+    <h2>System Notes</h2>
+
+    <ul class="info-list">
+
+        <li>
+            Run application as Administrator.
+        </li>
+
+        <li>
+            WinDivert driver must be installed.
+        </li>
+
+        <li>
+            Firewall rules are saved automatically.
+        </li>
+
+        <li>
+            Logs are stored in UTF-8 format.
+        </li>
+
+    </ul>
+
+</div>
+
+{% endblock %}

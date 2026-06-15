@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-header">
+
+    <h1>Cyber Security Dashboard</h1>
+
+    <p>
+        Real-Time Personal Firewall Monitoring
+    </p>
+
+</div>
+
+<div class="cards">
+
+    <div class="card">
+
+        <h3>Firewall Status</h3>
+
+        <div id="statusBadge"
+             class="badge danger">
+
+            🔴 Stopped
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Current Mode</h3>
+
+        <div id="modeCard">
+
+            BLOCK
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Total Rules</h3>
+
+        <div id="ruleCount">
+
+            0
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="card large-card">
+
+    <h2>Firewall Controls</h2>
+
+    <div class="controls">
+
+        <button class="btn success"
+                onclick="startFirewall()">
+
+            Start Firewall
+
+        </button>
+
+        <button class="btn danger"
+                onclick="stopFirewall()">
+
+            Stop Firewall
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<div class="card large-card">
+
+    <h2>Live Status</h2>
+
+    <p>
+
+        This dashboard automatically updates
+        firewall information every 5 seconds.
+
+    </p>
+
+</div>
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    loadDashboard
+);
+
+setInterval(
+    loadDashboard,
+    5000
+);
+
+</script>
+
+{% endblock %}

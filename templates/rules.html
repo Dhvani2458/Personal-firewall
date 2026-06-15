@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-header">
+
+    <h1>Firewall Rules</h1>
+
+    <p>
+        Manage blocked and allowed IP addresses
+    </p>
+
+</div>
+
+
+<div class="card">
+
+    <h2>Firewall Mode</h2>
+
+    <div class="rule-form">
+
+        <select id="modeSelect">
+
+            <option value="block">
+                Block Mode
+            </option>
+
+            <option value="allow">
+                Allow Mode
+            </option>
+
+        </select>
+
+        <button class="btn primary"
+                onclick="changeMode()">
+
+            Apply Mode
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>Add / Remove Rule</h2>
+
+    <div class="rule-form">
+
+        <input type="text"
+               id="ipInput"
+               placeholder="Enter IP Address">
+
+        <button class="btn success"
+                onclick="addIP()">
+
+            Add IP
+
+        </button>
+
+        <button class="btn danger"
+                onclick="removeIP()">
+
+            Remove IP
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>Current Rules</h2>
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>#</th>
+                <th>IP Address</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="rulesTable">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    loadRules
+);
+
+</script>
+
+{% endblock %}
